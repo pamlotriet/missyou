@@ -18,6 +18,7 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, missyou');
+    expect(compiled.querySelector('.speech-bubble p')?.textContent).toContain('I miss your face');
+    expect(compiled.querySelector('.music-button')?.textContent).toContain('Play');
   });
 });

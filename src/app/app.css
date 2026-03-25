@@ -86,6 +86,87 @@
   text-align: center;
 }
 
+.music-card {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  gap: 0.75rem;
+  width: min(100%, 18rem);
+  margin: 1.4rem auto 0;
+  padding: 1rem 1.05rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 248, 244, 0.78);
+  box-shadow:
+    0 1rem 2rem rgba(177, 129, 136, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(0.35rem);
+}
+
+.music-copy {
+  display: grid;
+  gap: 0.15rem;
+  text-align: center;
+}
+
+.music-copy strong {
+  font-size: 1.05rem;
+  color: #8d4a5c;
+}
+
+.music-copy span:last-child {
+  color: #8a6870;
+  font-size: 0.92rem;
+}
+
+.music-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c07c8f;
+}
+
+.music-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.85rem 1rem;
+  font: inherit;
+  font-weight: 800;
+  color: #fff8fb;
+  background: linear-gradient(135deg, #ef8da8 0%, #d36d84 100%);
+  box-shadow: 0 0.8rem 1.6rem rgba(211, 109, 132, 0.32);
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
+}
+
+.music-button:hover {
+  transform: translateY(-0.08rem);
+  filter: brightness(1.03);
+}
+
+.music-button:active {
+  transform: translateY(0.04rem);
+}
+
+.music-button:focus-visible {
+  outline: 3px solid rgba(141, 74, 92, 0.28);
+  outline-offset: 3px;
+}
+
+.music-error {
+  margin: 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #9f5264;
+}
+
+audio {
+  display: none;
+}
+
 .bear {
   position: absolute;
   left: 50%;
@@ -612,6 +693,10 @@
 
   .speech-bubble {
     width: min(100%, 19rem);
+  }
+
+  .music-card {
+    width: min(100%, 19.5rem);
   }
 
   .bear {

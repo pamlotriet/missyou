@@ -18,6 +18,29 @@
       <p>I miss your face</p>
     </div>
 
+    <section class="music-card" aria-label="Song player">
+      <button
+        type="button"
+        class="music-button"
+        (click)="togglePlayback()"
+        [attr.aria-pressed]="isPlaying"
+      >
+        {{ isPlaying ? 'Pause' : 'Play' }}
+      </button>
+
+      <p *ngIf="playbackError" class="music-error">{{ playbackError }}</p>
+
+      <audio
+        #player
+        preload="metadata"
+        (play)="syncPlaybackState()"
+        (pause)="syncPlaybackState()"
+        (ended)="syncPlaybackState()"
+      >
+        <source [src]="songUrl" type="audio/mpeg" />
+      </audio>
+    </section>
+
     <div class="bear" aria-hidden="true">
       <div class="bear-ear left"></div>
       <div class="bear-ear right"></div>

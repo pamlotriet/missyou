@@ -2,6 +2,27 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.3.
 
+## Deploy to Fly.io
+
+This repo is set up to deploy as a static Angular site behind `nginx` on Fly.io.
+
+Files added for deployment:
+
+- `Dockerfile`: builds the Angular app and serves the compiled output with `nginx`
+- `nginx.conf`: serves the app on port `8080` and falls back to `index.html`
+- `fly.toml`: Fly Machines config for the container
+
+Before the first deploy, change the `app` value in `fly.toml` if `missyou` is already taken.
+
+Deploy steps:
+
+```bash
+fly launch --no-deploy
+fly deploy
+```
+
+If you keep the included `fly.toml`, make sure the app name in it matches the app you created.
+
 ## Development server
 
 To start a local development server, run:
