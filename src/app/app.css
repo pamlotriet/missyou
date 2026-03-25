@@ -177,6 +177,10 @@ audio {
   animation: bear-bob 3.8s ease-in-out infinite;
 }
 
+.bear.is-dancing {
+  animation: dance-bounce 1s ease-in-out infinite;
+}
+
 .bear-ear,
 .bear-head,
 .bear-body,
@@ -216,6 +220,14 @@ audio {
   animation-delay: -2.1s;
 }
 
+.bear.is-dancing .bear-ear.left {
+  animation: dance-ear-left 0.5s ease-in-out infinite;
+}
+
+.bear.is-dancing .bear-ear.right {
+  animation: dance-ear-right 0.5s ease-in-out infinite;
+}
+
 .bear-head {
   top: 4.2rem;
   left: 50%;
@@ -224,6 +236,11 @@ audio {
   transform: translateX(-50%);
   background: #ab7866;
   z-index: 2;
+}
+
+.bear.is-dancing .bear-head {
+  animation: dance-head 0.72s ease-in-out infinite;
+  transform-origin: center bottom;
 }
 
 .bear-eye {
@@ -350,6 +367,11 @@ audio {
   z-index: 1;
 }
 
+.bear.is-dancing .bear-body {
+  animation: dance-body 1s ease-in-out infinite;
+  transform-origin: center top;
+}
+
 .bear-belly {
   left: 50%;
   bottom: 0.85rem;
@@ -384,6 +406,14 @@ audio {
   animation-delay: -1.4s;
 }
 
+.bear.is-dancing .bear-arm.left {
+  animation: dance-arm-left 0.62s ease-in-out infinite;
+}
+
+.bear.is-dancing .bear-arm.right {
+  animation: dance-arm-right 0.62s ease-in-out infinite;
+}
+
 .bear-leg {
   bottom: 0.9rem;
   width: 3.5rem;
@@ -398,6 +428,16 @@ audio {
 .bear-leg.right {
   right: 1.25rem;
   transform: rotate(-22deg);
+}
+
+.bear.is-dancing .bear-leg.left {
+  animation: dance-leg-left 0.7s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.bear.is-dancing .bear-leg.right {
+  animation: dance-leg-right 0.7s ease-in-out infinite;
+  transform-origin: top center;
 }
 
 .cloud {
@@ -562,6 +602,67 @@ audio {
   }
 }
 
+@keyframes dance-bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+  }
+
+  20% {
+    transform: translateX(calc(-50% - 0.35rem)) translateY(-0.3rem) rotate(-2deg);
+  }
+
+  40% {
+    transform: translateX(calc(-50% + 0.45rem)) translateY(-0.65rem) rotate(2.5deg);
+  }
+
+  60% {
+    transform: translateX(calc(-50% - 0.3rem)) translateY(-0.2rem) rotate(-1.5deg);
+  }
+
+  80% {
+    transform: translateX(calc(-50% + 0.35rem)) translateY(-0.8rem) rotate(1.5deg);
+  }
+}
+
+@keyframes dance-head {
+  0%,
+  100% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  25% {
+    transform: translateX(calc(-50% - 0.1rem)) rotate(-8deg);
+  }
+
+  50% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  75% {
+    transform: translateX(calc(-50% + 0.1rem)) rotate(8deg);
+  }
+}
+
+@keyframes dance-body {
+  0%,
+  100% {
+    transform: translateX(-50%) rotate(0deg) scaleY(1);
+  }
+
+  25% {
+    transform: translateX(calc(-50% - 0.08rem)) rotate(-4deg) scaleY(0.98);
+  }
+
+  50% {
+    transform: translateX(-50%) rotate(0deg) scaleY(1.02);
+  }
+
+  75% {
+    transform: translateX(calc(-50% + 0.08rem)) rotate(4deg) scaleY(0.98);
+  }
+}
+
 @keyframes blink {
   0%,
   44%,
@@ -607,6 +708,88 @@ audio {
 
   50% {
     transform: rotate(-26deg);
+  }
+}
+
+@keyframes dance-arm-left {
+  0%,
+  100% {
+    transform: rotate(18deg) translateY(0);
+  }
+
+  25% {
+    transform: rotate(56deg) translateY(-0.4rem);
+  }
+
+  50% {
+    transform: rotate(12deg) translateY(0.15rem);
+  }
+
+  75% {
+    transform: rotate(48deg) translateY(-0.2rem);
+  }
+}
+
+@keyframes dance-arm-right {
+  0%,
+  100% {
+    transform: rotate(-18deg) translateY(0);
+  }
+
+  25% {
+    transform: rotate(-52deg) translateY(-0.2rem);
+  }
+
+  50% {
+    transform: rotate(-8deg) translateY(0.18rem);
+  }
+
+  75% {
+    transform: rotate(-60deg) translateY(-0.42rem);
+  }
+}
+
+@keyframes dance-leg-left {
+  0%,
+  100% {
+    transform: rotate(22deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(10deg) translateY(-0.42rem);
+  }
+}
+
+@keyframes dance-leg-right {
+  0%,
+  100% {
+    transform: rotate(-22deg) translateY(-0.42rem);
+  }
+
+  50% {
+    transform: rotate(-8deg) translateY(0);
+  }
+}
+
+@keyframes dance-ear-left {
+  0%,
+  100% {
+    transform: rotate(-6deg);
+  }
+
+  50% {
+    transform: rotate(14deg);
+  }
+}
+
+@keyframes dance-ear-right {
+  0%,
+  100% {
+    transform: rotate(6deg);
+  }
+
+  50% {
+    transform: rotate(-14deg);
   }
 }
 
