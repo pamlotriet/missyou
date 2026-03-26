@@ -1,5 +1,5 @@
 <main class="page-shell">
-  <section class="scene" aria-label="Cute bear with a speech bubble">
+  <section class="scene" aria-label="Cute sheep with a smile and joke speech bubble">
     <div class="glow glow-one" aria-hidden="true"></div>
     <div class="glow glow-two" aria-hidden="true"></div>
     <div class="cloud cloud-one" aria-hidden="true"></div>
@@ -15,55 +15,32 @@
     <div class="dot dot-three" aria-hidden="true"></div>
 
     <div class="speech-bubble">
-      <p>I miss your face</p>
+      <p>Why did the sheep cross the road? To prove it wasn't a chicken.</p>
     </div>
 
-    <section class="music-card" aria-label="Song player">
-      <button
-        type="button"
-        class="music-button"
-        (click)="togglePlayback()"
-        [attr.aria-pressed]="isPlaying"
-      >
-        {{ isPlaying ? 'Pause' : 'Play' }}
-      </button>
-
-      <p *ngIf="playbackError" class="music-error">{{ playbackError }}</p>
-
-      <audio
-        #player
-        preload="metadata"
-        (play)="syncPlaybackState()"
-        (pause)="syncPlaybackState()"
-        (ended)="syncPlaybackState()"
-      >
-        <source [src]="songUrl" type="audio/mpeg" />
-      </audio>
-    </section>
-
-    <div class="bear" [class.is-dancing]="isPlaying" aria-hidden="true">
-      <div class="bear-ear left"></div>
-      <div class="bear-ear right"></div>
-      <div class="bear-head">
-        <div class="bear-eye left">
+    <div class="sheep is-smiling" aria-hidden="true">
+      <div class="sheep-ear left"></div>
+      <div class="sheep-ear right"></div>
+      <div class="sheep-head">
+        <div class="sheep-eye left">
           <span class="eye-shine"></span>
         </div>
-        <div class="bear-eye right">
+        <div class="sheep-eye right">
           <span class="eye-shine"></span>
         </div>
-        <div class="bear-snout">
-          <div class="bear-nose"></div>
-          <div class="bear-mouth"></div>
+        <div class="sheep-face">
+          <div class="sheep-nose"></div>
+          <div class="sheep-mouth"></div>
         </div>
-        <div class="bear-blush left"></div>
-        <div class="bear-blush right"></div>
+        <div class="sheep-cheek left"></div>
+        <div class="sheep-cheek right"></div>
       </div>
-      <div class="bear-body">
-        <div class="bear-arm left"></div>
-        <div class="bear-arm right"></div>
-        <div class="bear-leg left"></div>
-        <div class="bear-leg right"></div>
-        <div class="bear-belly"></div>
+      <div class="sheep-body">
+        <div class="sheep-arm left"></div>
+        <div class="sheep-arm right"></div>
+        <div class="sheep-leg left"></div>
+        <div class="sheep-leg right"></div>
+        <div class="sheep-belly"></div>
       </div>
     </div>
   </section>

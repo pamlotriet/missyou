@@ -14,9 +14,9 @@
 .scene {
   position: relative;
   width: min(100%, 27rem);
-  min-height: 42rem;
+  min-height: 39rem;
   overflow: hidden;
-  padding: 1.8rem 1.2rem 1.5rem;
+  padding: 1.8rem 1.2rem 1rem;
   border-radius: 2.25rem;
   background:
     radial-gradient(circle at top, rgba(255, 255, 255, 0.88), transparent 38%),
@@ -54,9 +54,9 @@
 
 .speech-bubble {
   position: relative;
-  width: min(100%, 17rem);
+  width: min(100%, 18.5rem);
   margin: 0 auto;
-  padding: 1.1rem 1.25rem;
+  padding: 1.05rem 1.35rem;
   border-radius: 999px;
   background: rgba(255, 252, 249, 0.92);
   box-shadow: 0 0.8rem 1.8rem rgba(175, 136, 144, 0.14);
@@ -79,174 +79,102 @@
 .speech-bubble p {
   margin: 0;
   font:
-    800 clamp(1.1rem, 5vw, 1.9rem) / 1.05 "Trebuchet MS",
+    800 clamp(1rem, 4.8vw, 1.45rem) / 1.2 "Trebuchet MS",
     "Gill Sans",
     sans-serif;
   color: #8d4a5c;
   text-align: center;
 }
 
-.music-card {
-  position: relative;
-  z-index: 3;
-  display: grid;
-  gap: 0.75rem;
-  width: min(100%, 18rem);
-  margin: 1.4rem auto 0;
-  padding: 1rem 1.05rem;
-  border-radius: 1.5rem;
-  background: rgba(255, 248, 244, 0.78);
-  box-shadow:
-    0 1rem 2rem rgba(177, 129, 136, 0.16),
-    inset 0 1px 0 rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(0.35rem);
-}
-
-.music-copy {
-  display: grid;
-  gap: 0.15rem;
-  text-align: center;
-}
-
-.music-copy strong {
-  font-size: 1.05rem;
-  color: #8d4a5c;
-}
-
-.music-copy span:last-child {
-  color: #8a6870;
-  font-size: 0.92rem;
-}
-
-.music-label {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #c07c8f;
-}
-
-.music-button {
-  border: 0;
-  border-radius: 999px;
-  padding: 0.85rem 1rem;
-  font: inherit;
-  font-weight: 800;
-  color: #fff8fb;
-  background: linear-gradient(135deg, #ef8da8 0%, #d36d84 100%);
-  box-shadow: 0 0.8rem 1.6rem rgba(211, 109, 132, 0.32);
-  cursor: pointer;
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease,
-    filter 180ms ease;
-}
-
-.music-button:hover {
-  transform: translateY(-0.08rem);
-  filter: brightness(1.03);
-}
-
-.music-button:active {
-  transform: translateY(0.04rem);
-}
-
-.music-button:focus-visible {
-  outline: 3px solid rgba(141, 74, 92, 0.28);
-  outline-offset: 3px;
-}
-
-.music-error {
-  margin: 0;
-  text-align: center;
-  font-size: 0.8rem;
-  color: #9f5264;
-}
-
-audio {
-  display: none;
-}
-
-.bear {
+.sheep {
   position: absolute;
   left: 50%;
   bottom: 0;
-  width: 18rem;
-  height: 24rem;
+  width: 17.5rem;
+  height: 22.5rem;
   transform: translateX(-50%);
   animation: bear-bob 3.8s ease-in-out infinite;
 }
 
-.bear.is-dancing {
+.sheep.is-smiling {
+  bottom: -0.2rem;
+}
+
+.sheep.is-dancing {
   animation: dance-bounce 1s ease-in-out infinite;
 }
 
-.bear-ear,
-.bear-head,
-.bear-body,
-.bear-arm,
-.bear-leg,
-.bear-belly,
-.bear-snout,
-.bear-eye,
-.bear-blush {
+.sheep-ear,
+.sheep-head,
+.sheep-body,
+.sheep-arm,
+.sheep-leg,
+.sheep-belly,
+.sheep-face,
+.sheep-eye,
+.sheep-cheek {
   position: absolute;
   border-radius: 999px;
 }
 
-.bear-ear {
-  top: 2.3rem;
-  width: 4.5rem;
-  height: 4.5rem;
-  background: #9f6c5d;
+.sheep-ear {
+  top: 4.7rem;
+  width: 2.5rem;
+  height: 5.8rem;
+  background: #b8948d;
   z-index: 1;
   animation: ear-wiggle 4.2s ease-in-out infinite;
 }
 
-.bear-ear::before {
+.sheep-ear::before {
   content: "";
   position: absolute;
-  inset: 0.85rem;
+  inset: 0.45rem;
   border-radius: inherit;
-  background: #f6cdc0;
+  background: #f2d5d1;
 }
 
-.bear-ear.left {
-  left: 1rem;
+.sheep-ear.left {
+  left: 1.5rem;
+  transform: rotate(18deg);
 }
 
-.bear-ear.right {
-  right: 1rem;
+.sheep-ear.right {
+  right: 1.5rem;
+  transform: rotate(-18deg);
   animation-delay: -2.1s;
 }
 
-.bear.is-dancing .bear-ear.left {
+.sheep.is-dancing .sheep-ear.left {
   animation: dance-ear-left 0.5s ease-in-out infinite;
 }
 
-.bear.is-dancing .bear-ear.right {
+.sheep.is-dancing .sheep-ear.right {
   animation: dance-ear-right 0.5s ease-in-out infinite;
 }
 
-.bear-head {
-  top: 4.2rem;
+.sheep-head {
+  top: 3.2rem;
   left: 50%;
-  width: 12.6rem;
-  height: 12rem;
+  width: 12.7rem;
+  height: 11.9rem;
   transform: translateX(-50%);
-  background: #ab7866;
+  background: #f8f4f0;
+  box-shadow:
+    0 0 0 0.55rem rgba(255, 255, 255, 0.95),
+    0 0 0 1.25rem rgba(246, 238, 232, 0.75);
   z-index: 2;
 }
 
-.bear.is-dancing .bear-head {
+.sheep.is-dancing .sheep-head {
   animation: dance-head 0.72s ease-in-out infinite;
   transform-origin: center bottom;
 }
 
-.bear-eye {
+.sheep-eye {
   top: 5rem;
-  width: 1rem;
-  height: 1rem;
+  width: 0.9rem;
+  height: 0.9rem;
   border-radius: 999px;
   background: #3b2524;
   overflow: hidden;
@@ -254,12 +182,12 @@ audio {
   animation: blink 5s infinite;
 }
 
-.bear-eye.left {
-  left: 2.85rem;
+.sheep-eye.left {
+  left: 3rem;
 }
 
-.bear-eye.right {
-  right: 2.85rem;
+.sheep-eye.right {
+  right: 3rem;
   animation-delay: -2.5s;
 }
 
@@ -273,169 +201,182 @@ audio {
   background: rgba(255, 255, 255, 0.9);
 }
 
-.bear-snout {
+.sheep-face {
   left: 50%;
-  bottom: 1.55rem;
-  width: 5.35rem;
-  height: 4.4rem;
+  bottom: 1.15rem;
+  width: 5.7rem;
+  height: 4.9rem;
   transform: translateX(-50%);
-  background: #f3d8c8;
+  background: #c99f97;
 }
 
-.bear-nose {
-  position: absolute;
-  left: 50%;
-  top: 0.95rem;
-  width: 1.25rem;
-  height: 1.25rem;
-  background: #8f4d5d;
-  transform: translateX(-50%) rotate(45deg);
-}
-
-.bear-nose::before,
-.bear-nose::after {
+.sheep-face::before {
   content: "";
   position: absolute;
-  width: 1.25rem;
-  height: 1.25rem;
+  inset: 0.75rem 1rem 2.3rem;
+  border-radius: 999px;
+  background: rgba(255, 238, 237, 0.35);
+}
+
+.sheep-nose {
+  position: absolute;
+  left: 50%;
+  top: 1.05rem;
+  width: 1.1rem;
+  height: 0.85rem;
+  border-radius: 50% 50% 60% 60%;
+  background: #6d4349;
+  transform: translateX(-50%);
+}
+
+.sheep-nose::before,
+.sheep-nose::after {
+  content: "";
+  position: absolute;
+  top: 0.2rem;
+  width: 0.15rem;
+  height: 0.18rem;
   border-radius: 50%;
-  background: #8f4d5d;
+  background: rgba(255, 240, 240, 0.8);
 }
 
-.bear-nose::before {
-  left: -0.62rem;
+.sheep-nose::before {
+  left: 0.28rem;
 }
 
-.bear-nose::after {
-  top: -0.62rem;
+.sheep-nose::after {
+  right: 0.28rem;
 }
 
-.bear-mouth {
+.sheep-mouth {
   position: absolute;
   left: 50%;
-  top: 2.65rem;
-  width: 1.8rem;
-  height: 0.9rem;
+  top: 2.25rem;
+  width: 2.5rem;
+  height: 1.35rem;
   transform: translateX(-50%);
 }
 
-.bear-mouth::before,
-.bear-mouth::after {
+.sheep-mouth::before,
+.sheep-mouth::after {
   content: "";
   position: absolute;
-  top: 0;
-  width: 0.9rem;
-  height: 0.65rem;
-  border-bottom: 0.16rem solid #3b2524;
-  border-radius: 0 0 1rem 1rem;
-}
-
-.bear-mouth::before {
-  left: 0;
-  transform: rotate(12deg);
-}
-
-.bear-mouth::after {
-  right: 0;
-  transform: scaleX(-1) rotate(12deg);
-}
-
-.bear-blush {
-  top: 6.9rem;
-  width: 2.1rem;
+  bottom: 0.15rem;
+  width: 1.2rem;
   height: 1rem;
+  border-bottom: 0.2rem solid #3b2524;
+  border-radius: 0 0 1.1rem 1.1rem;
+}
+
+.sheep-mouth::before {
+  left: 0;
+  transform: rotate(18deg);
+}
+
+.sheep-mouth::after {
+  right: 0;
+  transform: scaleX(-1) rotate(18deg);
+}
+
+.sheep-cheek {
+  top: 6.7rem;
+  width: 1.8rem;
+  height: 0.85rem;
   background: #ffb0c7;
   filter: blur(0.22rem);
   animation: blush-pulse 2.4s ease-in-out infinite;
 }
 
-.bear-blush.left {
-  left: 1.2rem;
+.sheep-cheek.left {
+  left: 1.45rem;
 }
 
-.bear-blush.right {
-  right: 1.2rem;
+.sheep-cheek.right {
+  right: 1.45rem;
 }
 
-.bear-body {
+.sheep-body {
   left: 50%;
   bottom: 0;
-  width: 12.4rem;
-  height: 11rem;
+  width: 13rem;
+  height: 10.8rem;
   transform: translateX(-50%);
-  background: #ab7866;
+  background: #fbf8f4;
+  box-shadow:
+    0 0 0 0.5rem rgba(255, 255, 255, 0.95),
+    0 0 0 1rem rgba(246, 238, 232, 0.75);
   z-index: 1;
 }
 
-.bear.is-dancing .bear-body {
+.sheep.is-dancing .sheep-body {
   animation: dance-body 1s ease-in-out infinite;
   transform-origin: center top;
 }
 
-.bear-belly {
+.sheep-belly {
   left: 50%;
-  bottom: 0.85rem;
-  width: 5.3rem;
-  height: 4.6rem;
+  bottom: 1rem;
+  width: 5.6rem;
+  height: 4.4rem;
   transform: translateX(-50%);
-  background: #f3d8c8;
+  background: #fff1ee;
 }
 
-.bear-arm,
-.bear-leg {
-  background: #9a6a5b;
+.sheep-arm,
+.sheep-leg {
+  background: #b8948d;
 }
 
-.bear-arm {
-  top: 1.7rem;
-  width: 3.25rem;
-  height: 5rem;
+.sheep-arm {
+  top: 2rem;
+  width: 2.5rem;
+  height: 4rem;
   transform-origin: top center;
 }
 
-.bear-arm.left {
-  left: -0.85rem;
-  transform: rotate(16deg);
+.sheep-arm.left {
+  left: 0.15rem;
+  transform: rotate(20deg);
   animation: wave-left 2.8s ease-in-out infinite;
 }
 
-.bear-arm.right {
-  right: -0.85rem;
-  transform: rotate(-16deg);
+.sheep-arm.right {
+  right: 0.15rem;
+  transform: rotate(-20deg);
   animation: wave-right 2.8s ease-in-out infinite;
   animation-delay: -1.4s;
 }
 
-.bear.is-dancing .bear-arm.left {
+.sheep.is-dancing .sheep-arm.left {
   animation: dance-arm-left 0.62s ease-in-out infinite;
 }
 
-.bear.is-dancing .bear-arm.right {
+.sheep.is-dancing .sheep-arm.right {
   animation: dance-arm-right 0.62s ease-in-out infinite;
 }
 
-.bear-leg {
-  bottom: 0.9rem;
-  width: 3.5rem;
+.sheep-leg {
+  bottom: -0.4rem;
+  width: 2rem;
   height: 5.4rem;
 }
 
-.bear-leg.left {
-  left: 1.25rem;
-  transform: rotate(22deg);
+.sheep-leg.left {
+  left: 2.4rem;
+  transform: rotate(4deg);
 }
 
-.bear-leg.right {
-  right: 1.25rem;
-  transform: rotate(-22deg);
+.sheep-leg.right {
+  right: 2.4rem;
+  transform: rotate(-4deg);
 }
 
-.bear.is-dancing .bear-leg.left {
+.sheep.is-dancing .sheep-leg.left {
   animation: dance-leg-left 0.7s ease-in-out infinite;
   transform-origin: top center;
 }
 
-.bear.is-dancing .bear-leg.right {
+.sheep.is-dancing .sheep-leg.right {
   animation: dance-leg-right 0.7s ease-in-out infinite;
   transform-origin: top center;
 }
@@ -878,11 +819,7 @@ audio {
     width: min(100%, 19rem);
   }
 
-  .music-card {
-    width: min(100%, 19.5rem);
-  }
-
-  .bear {
+  .sheep {
     width: 20rem;
     height: 26rem;
   }

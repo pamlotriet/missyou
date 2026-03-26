@@ -18,7 +18,10 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.speech-bubble p')?.textContent).toContain('I miss your face');
-    expect(compiled.querySelector('.music-button')?.textContent).toContain('Play');
+    expect(compiled.querySelector('.speech-bubble p')?.textContent).toContain(
+      "Why did the sheep cross the road? To prove it wasn't a chicken.",
+    );
+    expect(compiled.querySelector('.music-button')).toBeNull();
+    expect(compiled.querySelector('.sheep')).toBeTruthy();
   });
 });
